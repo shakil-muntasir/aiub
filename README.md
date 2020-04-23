@@ -1,0 +1,2 @@
+# aiub
+AIUB Django app
