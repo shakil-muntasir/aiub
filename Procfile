@@ -1,2 +1,2 @@
 
-web: gunicorn news365.wsgi --log-file -
+web: gunicorn aiub.wsgi --log-file -
