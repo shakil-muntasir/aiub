@@ -1,0 +1,220 @@
+
+{% extends "base.html" %}
+    
+    
+{% block page_content %}
+ 
+    <div class="container">
+    <div id="page-header">
+        <div class="row">
+            <div class="col-sm-3">
+                <ul id="breadcrumbs">
+                    <li><a href="/">Home</a></li>
+                    <li class="separator"> / </li>
+                </ul>
+            </div>
+            <div class="col-sm-9 text-center"><h1 class="header-title">Convocation</h1></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-9 text-justify pull-right">
+            <div class="panel panel-default">
+<div class="panel-body">
+<div id="convocationGraph" style="height: 350px; width: 100%;">&nbsp;</div>
+</div>
+
+<div class="list-group text-center"><a class="list-group-item list-group-item-default" href="/convocation/1st-convocation/">1st Convocation Ceremony (2001)</a> <a class="list-group-item list-group-item-default" href="/convocation/2nd-convocation/">2nd Convocation Ceremony (2002)</a> <a class="list-group-item list-group-item-default" href="/convocation/3rd-convocation/">3rd Convocation Ceremony (2003)</a> <a class="list-group-item list-group-item-default" href="/convocation/4th-convocation/">4th Convocation Ceremony (2004)</a> <a class="list-group-item list-group-item-default" href="/convocation/5th-convocation/">5th Convocation Ceremony (2005)</a> <a class="list-group-item list-group-item-default" href="/convocation/6th-convocation/">6th Convocation Ceremony (2006)</a> <a class="list-group-item list-group-item-default" href="/convocation/7th-convocation/">7th Convocation Ceremony (2007)</a> <a class="list-group-item list-group-item-default" href="/convocation/8th-convocation/">8th Convocation Ceremony (2008)</a> <a class="list-group-item list-group-item-default" href="/convocation/9th-convocation/">9th Convocation Ceremony (2009)</a> <a class="list-group-item list-group-item-default" href="/convocation/10th-convocation/">10th Convocation Ceremony (2010)</a> <a class="list-group-item list-group-item-default" href="/convocation/11th-convocation/">11th Convocation Ceremony (2011)</a> <a class="list-group-item list-group-item-default" href="/convocation/12th-convocation/">12th Convocation Ceremony (2012)</a> <a class="list-group-item list-group-item-default" href="/convocation/13th-convocation/">13th Convocation Ceremony (2013)</a> <a class="list-group-item list-group-item-default" href="/convocation/14th-convocation/">14th Convocation Ceremony (2014)</a> <a class="list-group-item list-group-item-default" href="/15th-convocation-notices-and-schedule-updated-on-january-25-2015/">15th Convocation Ceremony (2015) </a></div>
+</div>
+<script type="text/javascript">
+       window.onload = function () {
+            var chart = new CanvasJS.Chart("convocationGraph", {
+            zoomEnabled: true,
+            //theme: "theme2",//theme1
+            title: {
+                //text: "AIUB Convocation 2001-2015",
+                fontColor: "#fff",
+                fontSize: 18,
+                padding: 5,
+                margin: 10,
+                backgroundColor: "#004EA8",
+                borderThickness: 1,
+                borderColor: "#fff",
+                cornerRadius: 3,
+                verticalAlign: "top",
+                horizontalAlign: "center"
+            },
+
+            toolTip: {
+                enabled: true,  //disable here
+                animationEnabled: true //disable here
+            },
+            axisX: {
+                labelFontSize: 12,
+                labelFontColor: "#363636",
+                title: "Convocation",
+                titleFontColor: "steelBlue", //#004EA8
+                titleFontSize: 18,
+                tickLength: 7,
+                tickColor: "#004EA8",
+                tickThickness: 2
+            },
+            axisY: {
+                labelFontSize: 12,
+                labelFontColor: "#999",
+                title: "Graduates",
+                titleFontColor: "steelBlue", //#004EA8
+                titleFontSize: 18,
+                interlacedColor: "#f5f5f5",
+                tickLength: 5,
+                tickColor: "#004EA8",
+                tickThickness: 2,
+                gridColor: "#fff",
+                gridThickness: 2,
+                interval: 500
+            },
+            legend: {
+                horizontalAlign: "right",
+                verticalAlign: "top",
+                fontSize: 14
+
+            },
+            data: [{
+                click: function (e) {
+                    alert("American International University-Bangladesh (AIUB) Convocation: " + e.dataPoint.x + " Graduates: " + e.dataPoint.y);
+                },
+                type: "column",
+                showInLegend: true,
+                legendMarkerType: "none",
+                legendText: "Total Graduates: 29313",
+                indexLabel: "{y}",
+                valueFormatString: "##",
+                indexLabelFontSize: 10,
+                indexLabelFontFamily: "Lucida Console",
+                indexLabelFontColor: "#004EA8",
+                indexLabelPlacement: "outside", //inside, outside
+                indexLabelOrientation: "vertical", //vertical, horizontal
+                toolTipContent: "<a href = {name}> {label} Convocation</a><br/>Graduates: {y}",
+                dataPoints: [
+                { label: "1st", y: 43, indexLabel: "43", name: "/convocation/1st-convocation/", indexLabelOrientation: "horizontal", indexLabelFontWeight:"normal" },
+                { label: "2nd", y: 138, indexLabel: "138", name: "/convocation/2nd-convocation/", indexLabelOrientation: "horizontal", indexLabelFontWeight:"normal" },
+                { label: "3rd", y: 140, indexLabel: "140", name: "/convocation/3rd-convocation/", indexLabelOrientation: "horizontal", indexLabelFontWeight:"normal" },
+                { label: "4th", y: 246, indexLabel: "246", name: "/convocation/4th-convocation/", indexLabelOrientation: "horizontal", indexLabelFontWeight:"normal" },
+                { label: "5th", y: 342, indexLabel: "342", name: "/convocation/5th-convocation/", indexLabelOrientation: "horizontal", indexLabelFontWeight:"normal" },
+                { label: "6th", y: 598, indexLabel: "598", name: "/convocation/6th-convocation/", indexLabelOrientation: "horizontal", indexLabelFontWeight:"normal" },
+                { label: "7th", y: 753, indexLabel: "753", name: "/convocation/7th-convocation/", indexLabelOrientation: "horizontal", indexLabelFontWeight:"normal" },
+                { label: "8th", y: 743, indexLabel: "743", name: "/convocation/8th-convocation/", indexLabelOrientation: "horizontal", indexLabelFontWeight:"normal" },
+                { label: "9th", y: 858, indexLabel: "858", name: "/convocation/9th-convocation/", indexLabelOrientation: "horizontal", indexLabelFontWeight:"normal" },
+                { label: "10th", y: 1040, indexLabel: "1040", name: "/convocation/10th-convocation/", indexLabelOrientation: "horizontal", indexLabelFontWeight:"normal" },
+                { label: "11th", y: 1537, indexLabel: "1537", name: "/convocation/11th-convocation/", indexLabelOrientation: "horizontal", indexLabelFontWeight:"normal" },
+                { label: "12th", y: 2173, indexLabel: "2173", name: "/convocation/12th-convocation/", indexLabelOrientation: "horizontal", indexLabelFontWeight:"normal" },
+                { label: "13th", y: 2562, indexLabel: "2562", name: "/convocation/13th-convocation/", indexLabelOrientation: "horizontal", indexLabelFontWeight:"normal" },
+                { label: "14th", y: 2730, indexLabel: "2730", name: "/convocation/14th-convocation/", indexLabelOrientation: "horizontal" },
+                { label: "15th", y: 2755, indexLabel: "2755", name: "/15th-convocation-notices-and-schedule-updated-on-january-25-2015/", indexLabelOrientation: "horizontal", indexLabelFontWeight: "normal" },
+                { label: "16th", y: 2517, indexLabel: "2517", name: "/convocation/16th-convocation/", indexLabelOrientation: "horizontal", indexLabelFontWeight:"normal" },
+                { label: "17th", y: 2960, indexLabel: "2960", name: "/convocation/17th-convocation/", indexLabelOrientation: "horizontal", indexLabelFontWeight:"normal" },
+				 { label: "18th", y: 2674, indexLabel: "2674", name: "/convocation/18th-convocation/", indexLabelOrientation: "horizontal", indexLabelFontWeight: "normal" },
+				 { label: "19th", y: 4504, indexLabel: "4504", name: "/convocation/19th-convocation/", indexLabelOrientation: "horizontal", indexLabelFontWeight: "normal" }
+                ]
+            }]
+        });
+         chart.render();
+       }
+</script>
+            <div class="panel panel-default" style="margin-top: 20px;">
+                <div class="panel-footer">
+                    <div class="row mobile-social-share">
+                        <div class="col-md-9">
+                            <h3>
+&nbsp;Share this content
+                            </h3>
+                        </div>
+                        <div id="socialHolder" class="col-md-3">
+                            <div id="socialShare" class="btn-group share-group">
+                                <a data-toggle="dropdown" class="btn btn-info">
+                                    <span class="glyphicon glyphicon-share-alt"></span>
+                                </a>
+                                <button href="#" data-toggle="dropdown" class="btn btn-info dropdown-toggle share">
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a data-original-title="Twitter" rel="tooltip" class="btn btn-twitter" data-placement="left" href="http://twitter.com/intent/tweet?url=convocation&text=AIUB-Convocation" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                                            t
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a data-original-title="Facebook" rel="tooltip" class="btn btn-facebook" data-placement="left" href="http://www.facebook.com/sharer/sharer.php?u=convocation" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                                            f
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a data-original-title="Google+" rel="tooltip" class="btn btn-google" data-placement="left" href="https://plus.google.com/share?url=convocation" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                                            g+
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a data-original-title="LinkedIn" rel="tooltip" class="btn btn-linkedin" data-placement="left" href="http://www.linkedin.com/shareArticle?mini=true&url=convocation&title=Convocation&source=convocation" class="btn btn-inverse" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                                            in
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a data-original-title="Pinterest" rel="tooltip" class="btn btn-pinterest" data-placement="left" href="https://pinterest.com/pin/create/button/?url=convocation&media=&description=Convocation" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                                            p
+                                        </a>
+                                    </li>
+                                    <!--<li>
+                                            <a data-original-title="Email" rel="tooltip" class="btn btn-mail" data-placement="left" href="mailto:?subject=Convocation-AIUB&amp;body=Check out this convocation" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><span class="glyphicon glyphicon-envelope"></span></a>
+                                        </li>-->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-3">
+            
+
+<div id="sidebar" class="panel panel-default">
+    <div class="panel-body">
+        <form class="search" action="/search/" method="get">
+    <div class="input-group">
+        <input name="key" id="key" type="text" class="form-control" placeholder="type your search" value="">
+        <span class="input-group-btn">
+            <button class="btn btn-theme" type="submit">&nbsp;<span class="glyphicon glyphicon-search"></span>&nbsp;</button>
+        </span>
+    </div>
+</form>
+
+        <ul class="list-unstyled">
+                <li class="widget">
+                    <h3 class="widget-title">Categories</h3>
+                    <ul>
+                            <li>
+                                <a href="/category/news-events">News &amp; Events</a>
+                            </li>
+                            <li>
+                                <a href="/category/notices">Notices</a>
+                            </li>
+                            <li>
+                                <a href="/category/top-news">Top News</a>
+                            </li>
+                            <li>
+                                <a href="/category/uncategorized">Uncategorized</a>
+                            </li>
+                            <li>
+                                <a href="/category/courses">Courses</a>
+                            </li>
+                    </ul>
+                </li>
+        </ul>
+    </div>
+</div>
+
+        </div>
+    </div>
+</div>
+    </div>
+
+{% endblock %}
